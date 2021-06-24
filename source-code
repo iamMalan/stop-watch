@@ -1,0 +1,32 @@
+import time 
+
+
+def time_convert(sec):
+    mint = sec // 60
+    sec = sec % 60
+    hour = mint//60
+    mint = hour % 60
+    print("The time lapse is {0}:{1}:{2}".format(hour,mint,sec))
+    return
+
+def inputt():
+    print('''
+░██╗░░░░░░░██╗███████╗██╗░░░░░░█████╗░░█████╗░███╗░░░███╗███████╗
+░██║░░██╗░░██║██╔════╝██║░░░░░██╔══██╗██╔══██╗████╗░████║██╔════╝
+░╚██╗████╗██╔╝█████╗░░██║░░░░░██║░░╚═╝██║░░██║██╔████╔██║█████╗░░
+░░████╔═████║░██╔══╝░░██║░░░░░██║░░██╗██║░░██║██║╚██╔╝██║██╔══╝░░
+░░╚██╔╝░╚██╔╝░███████╗███████╗╚█████╔╝╚█████╔╝██║░╚═╝░██║███████╗
+░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝''' '\n')
+    
+    global  start
+    input("Press Enter to Start")
+    start = time.time()
+    
+    global end
+    input("Press Enter to Stop")
+    end = time.time()
+    print("\n")
+    
+inputt()
+time_lapse = end-start
+print(time_convert(time_lapse))
